@@ -1,4 +1,4 @@
-# 📈 Financial Market ELT Pipeline & Dashboard
+# 📈 Financial Market ELT Pipeline & Dashboard (Ms Fabric Edition)
 
 [![Skills](https://skills.syvixor.com/api/icons?i=microsoftfabric,powerbi,apachespark,python&perline=12&radius=40)](https://github.com/syvixor/skills-icons)
 
@@ -10,6 +10,8 @@
 
 - Live Streamlit dashboard: [JINGHAOdata.engineer](https://www.jinghaodata.engineer/)
 - Tableau Public dashboard: [Tickers Analysis Dashboard](https://public.tableau.com/views/TickersAnalysisDashboard/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- Power BI dashboard: 
+  - [Dashboard in PDF format (No interaction)](Stock_Analyst.pdf)
 ---
 
 ## 🏗️ Architecture & Pipeline Design
@@ -19,17 +21,30 @@
 
 This project follows a strict **Medallion Architecture** to ensure data quality, scalability, and performance. 
 
-* **🥉 Bronze Layer (Raw Ingestion):** * Extracts the top 3 most actively traded stocks daily using the Alpha Vantage API.
+* **🥉 Bronze Layer (Raw Ingestion):** Extracts the top 3 most actively traded stocks daily using the Alpha Vantage API.
   * Fetches corresponding daily time-series prices, news sentiment, and company overview data.
   * Checks market calendars (`pandas_market_calendars`) to gracefully skip execution on weekends and market holidays.
   * Data is stored in OneLake as raw JSON files partitioned by extraction date.
-* **🥈 Silver Layer (Cleansing & Structuring):** * PySpark notebooks flatten heavily nested API responses (e.g., exploding dictionary maps into tabular rows).
+* **🥈 Silver Layer (Cleansing & Structuring):** PySpark notebooks flatten heavily nested API responses (e.g., exploding dictionary maps into tabular rows).
   * Implements "Schema on Write" to scrub dirty data (e.g., converting malformed API hyphens into nulls) and enforce strict data types.
   * Uses **Delta Merge** operations to upsert historical prices and perform fast appends for new daily batches without duplicating records.
-* **🥇 Gold Layer (Business Aggregation):** * Joins daily price action with bullish/bearish news sentiment scores.
+* **🥇 Gold Layer (Business Aggregation):** Joins daily price action with bullish/bearish news sentiment scores.
   * Aggregates 100-day moving averages, volume metrics, and sentiment trends.
   * Materialized as business-ready Delta Parquet tables for direct reporting.
 
+## 🗂️ Fabric Workspace Components
+
+![Workspace Overview](images/workspace.png)
+*A complete view of the Microsoft Fabric workspace encapsulating all data engineering, orchestration, and reporting assets.*
+
+This project operates entirely within a unified Microsoft Fabric workspace (`Most_Active_Stocks_Analysis`), cleanly separating storage, compute, and configuration:
+
+* **Lakehouse & SQL Endpoint (`Stock_Market_Analysis`):** The central storage hub on OneLake. It holds the raw JSON API payloads (Bronze layer) and the structured Delta Parquet tables (Silver and Gold layers), which are immediately queryable via the automated SQL analytics endpoint.
+* **PySpark Notebooks (`01` to `04`):** Modular, numbered Apache Spark notebooks that execute the Medallion architecture. They handle everything from initial REST API requests to complex Delta Merges and business aggregations. (`Find them in Pipeline folder`)
+* **Data Pipeline (`Pipeline`):** The orchestration engine that runs the PySpark notebooks sequentially on a daily schedule, complete with integrated logic for Office 365 email alerting.
+* **Power BI Assets (`Stock_Analyst`):** Contains both the Semantic Model (which establishes the DAX relationships and schema) and the interactive Report (the final user-facing dashboard).
+* **Environment & Security (`env`, `Var`):** * **`env`:** A custom Fabric Environment managing necessary Python dependencies (such as `pandas_market_calendars`).
+  * **`Var`:** A secure Variable Library keeping API keys and credentials completely hidden from the codebase.
 ## ⚙️ Orchestration & Alerting
 
 ![Fabric Pipeline](images/pipeline.png)
@@ -66,9 +81,11 @@ The reporting layer is designed for modularity and immediate financial insight, 
 * **Visualization:** Power BI (Direct connection to Lakehouse SQL endpoint)
 * **Languages:** Python, SQL, DAX
 
-## 🚀 Setup & Execution
+## 👤 Author
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/yourusername/most-active-stocks-pipeline.git](https://github.com/yourusername/most-active-stocks-pipeline.git)
-   cd most-active-stocks-pipeline
+**Adam (Jinghao) Chen**
+* **Role:** Analytics & Data Engineer | Microsoft Certified: Fabric Analytics Engineer Associate
+* **Location:** Greater Vancouver, BC
+* **Email:** [Adam_CJH@outlook.com](mailto:Adam_CJH@outlook.com)
+* **LinkedIn:** [Connect on LinkedIn](https://www.linkedin.com/in/adam-cjh/)
+* **GitHub:** [@chenjinghao](https://github.com/chenjinghao)
