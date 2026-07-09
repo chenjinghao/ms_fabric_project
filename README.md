@@ -36,6 +36,7 @@ This project follows a strict **Medallion Architecture** to ensure data quality,
 ## 🗂️ Fabric Workspace Components
 
 ![Workspace Overview](images/workspace.png)
+
 *A complete view of the Microsoft Fabric workspace encapsulating all data engineering, orchestration, and reporting assets.*
 
 This project operates entirely within a unified Microsoft Fabric workspace (`Most_Active_Stocks_Analysis`), cleanly separating storage, compute, and configuration:
