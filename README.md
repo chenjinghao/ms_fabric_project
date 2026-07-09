@@ -1,14 +1,20 @@
-# 📈 Most Active Stocks Data Pipeline & Dashboard
+# 📈 Financial Market ELT Pipeline & Dashboard
 
 [![Skills](https://skills.syvixor.com/api/icons?i=microsoftfabric,powerbi,apachespark,python&perline=12&radius=40)](https://github.com/syvixor/skills-icons)
 
-> **This repository is a modern recreation of my original ELT project.** It is an end-to-end automated data pipeline built entirely on Microsoft Fabric. This project orchestrates the daily extraction of stock market metrics, news sentiment, and business profiles, transforms the data using PySpark, and serves it through a highly dynamic Power BI dashboard.
+**This repository is a modern recreation of my original ELT project.** It is an end-to-end automated data pipeline built entirely on Microsoft Fabric. This project orchestrates the daily extraction of stock market metrics, news sentiment, and business profiles, transforms the data using PySpark, and serves it through a highly dynamic Power BI dashboard.
 
+- The original project can be found
+  - Frontend repository: [de-project-2-Streamlit-4-Viz](https://github.com/chenjinghao/de-project-2-Streamlit-4-Viz)
+  - Backend repository: [de-project-1-airflow-dbt-4-ELT](https://github.com/chenjinghao/de-project-1-airflow-dbt-4-ELT)
+
+- Live Streamlit dashboard: [JINGHAOdata.engineer](https://www.jinghaodata.engineer/)
+- Tableau Public dashboard: [Tickers Analysis Dashboard](https://public.tableau.com/views/TickersAnalysisDashboard/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ---
 
 ## 🏗️ Architecture & Pipeline Design
 
-![Architecture Diagram](images\MS_Fabric_Project.png)
+![Architecture Diagram](images/MS_Fabric_Project.png)
 *High-level system architecture showcasing the flow from Alpha Vantage APIs through the OneLake Medallion architecture into Power BI.*
 
 This project follows a strict **Medallion Architecture** to ensure data quality, scalability, and performance. 
@@ -43,12 +49,12 @@ The reporting layer connects directly to the Lakehouse SQL Analytics Endpoint. T
 The reporting layer is designed for modularity and immediate financial insight, utilizing advanced DAX to create a reactive user experience.
 
 ### Main Market Board
-![Main Dashboard](images\bi_dashboard.png)
+![Main Dashboard](images/bi_dashboard.png)
 * **Custom KPI Modules:** Engineered DAX measures dynamically track the latest close price and daily volume against 100-day moving averages, triggering custom text indicators (🔺 Above 100-Day Avg / 🔻 Below 100-Day Avg) and conditional formatting.
 * **Trend Visualization:** Utilizes the OKViz Candlestick chart with a continuous x-axis to map 100 days of price action against average baselines, alongside a dynamic Sentiment Gauge.
 
 ### Company Profile Page
-![Company Info](images\bi_company_info.png)
+![Company Info](images/bi_company_info.png)
 * **Dynamic Profiling:** Dashboard titles, sector/industry subtitles, and full business descriptions automatically update based on the selected ticker symbol.
 * **Web Integration:** Formatted data categories natively convert raw URL text into clickable web icons for seamless navigation to company SEC filings and news sources.
 
