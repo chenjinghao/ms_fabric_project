@@ -12,6 +12,7 @@
 - Tableau Public dashboard: [Tickers Analysis Dashboard](https://public.tableau.com/views/TickersAnalysisDashboard/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 - Power BI dashboard: 
   - [Dashboard in PDF format (No interaction)](Stock_Analyst.pdf)
+  - [YouTube Demo](https://youtu.be/NFiescC8d34)
 ---
 
 ## 🏗️ Architecture & Pipeline Design
