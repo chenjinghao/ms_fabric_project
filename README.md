@@ -11,8 +11,11 @@
 - Live Streamlit dashboard: [JINGHAOdata.engineer](https://www.jinghaodata.engineer/)
 - Tableau Public dashboard: [Tickers Analysis Dashboard](https://public.tableau.com/views/TickersAnalysisDashboard/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 - Power BI dashboard: 
-  - [Dashboard in PDF format (No interaction)](Stock_Analyst.pdf)
-  - [YouTube Demo](https://youtu.be/NFiescC8d34)
+  - [Dashboard in PDF format (No interaction)](Dashboard_Stock_Analyst.pdf)
+  - [YouTube Demo Video](https://youtu.be/NFiescC8d34)
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NFiescC8d34?si=eA8GIjYcTx46baBQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## 🏗️ Architecture & Pipeline Design
