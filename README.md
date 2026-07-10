@@ -3,18 +3,19 @@
 [![Skills](https://skills.syvixor.com/api/icons?i=microsoftfabric,powerbi,apachespark,python&perline=12&radius=40)](https://github.com/syvixor/skills-icons)
 
 **This repository is a modern recreation of my original ELT project.** It is an end-to-end automated data pipeline built entirely on Microsoft Fabric. This project orchestrates the daily extraction of stock market metrics, news sentiment, and business profiles, transforms the data using PySpark, and serves it through a highly dynamic Power BI dashboard.
+- Power BI dashboard: 
+  - [Dashboard in PDF format (No interaction)](Dashboard_Stock_Analyst.pdf)
+  - [YouTube Demo Video](https://youtu.be/NFiescC8d34)
 
+    [![Watch the video](https://img.youtube.com/vi/NFiescC8d34/0.jpg)](https://www.youtube.com/watch?v=NFiescC8d34)
+    
 - The original project can be found
   - Frontend repository: [de-project-2-Streamlit-4-Viz](https://github.com/chenjinghao/de-project-2-Streamlit-4-Viz)
   - Backend repository: [de-project-1-airflow-dbt-4-ELT](https://github.com/chenjinghao/de-project-1-airflow-dbt-4-ELT)
 
 - Live Streamlit dashboard: [JINGHAOdata.engineer](https://www.jinghaodata.engineer/)
 - Tableau Public dashboard: [Tickers Analysis Dashboard](https://public.tableau.com/views/TickersAnalysisDashboard/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-- Power BI dashboard: 
-  - [Dashboard in PDF format (No interaction)](Dashboard_Stock_Analyst.pdf)
-  - [YouTube Demo Video](https://youtu.be/NFiescC8d34)
 
-[![Watch the video](https://img.youtube.com/vi/NFiescC8d34/0.jpg)](https://www.youtube.com/watch?v=NFiescC8d34)
 
 ---
 
