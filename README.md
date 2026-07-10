@@ -13,8 +13,8 @@
 - Power BI dashboard: 
   - [Dashboard in PDF format (No interaction)](Dashboard_Stock_Analyst.pdf)
   - [YouTube Demo Video](https://youtu.be/NFiescC8d34)
-  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NFiescC8d34?si=eA8GIjYcTx46baBQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[![Watch the video](https://img.youtube.com/vi/NFiescC8d34/0.jpg)](https://www.youtube.com/watch?v=NFiescC8d34)
 
 ---
 
